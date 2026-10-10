@@ -1,0 +1,3 @@
+Sticky navigation fix
+
+The main navigation now stays visible while scrolling. Deploy the entire folder to Netlify, or replace styles.css in your existing project. Keep the rest of your files and Firebase configuration. After deploying, hard-refresh with Ctrl+F5.

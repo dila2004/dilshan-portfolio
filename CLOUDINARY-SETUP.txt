@@ -1,0 +1,14 @@
+CLOUDINARY SETUP
+
+1. Create/sign in to your Cloudinary account: https://cloudinary.com/
+2. In the Cloudinary Console, copy your Cloud name.
+3. Go to Settings > Upload > Upload presets > Add upload preset.
+4. Set Signing Mode to Unsigned and save the preset. Restrict allowed formats to jpg/jpeg/png/webp/gif and set a reasonable upload size limit if the console offers these settings.
+5. Open admin.js and replace these two placeholders near the top:
+   const CLOUDINARY_CLOUD_NAME = "YOUR_CLOUDINARY_CLOUD_NAME";
+   const CLOUDINARY_UPLOAD_PRESET = "YOUR_UNSIGNED_UPLOAD_PRESET";
+6. Do NOT put your Cloudinary API secret in browser JavaScript.
+7. Replace admin.html, admin.js and admin.css in your existing project folder. Keep your existing firebase-config.js unchanged.
+8. Test through VS Code Live Server. Sign in with the verified admin email, choose an image, confirm preview, then publish the project.
+
+This uses Cloudinary to host the image and stores the resulting secure image URL in the Firestore project's imageUrl field. It does not use Firebase Storage. If the image uploads but Firestore saving fails, check the Firestore Rules as before.
